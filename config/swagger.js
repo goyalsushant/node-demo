@@ -13,7 +13,12 @@ const options = {
     },
     servers: [
       {
-        url: `http://localhost:${process.env.PORT}`
+        url: `http://localhost:${process.env.PORT}`,
+        description: 'URL for Development server'
+      },
+      {
+        url: `https://demo-sg-d6dgh0c3gubagmbu.centralindia-01.azurewebsites.net/`,
+        description: 'URL for Live server'
       }
     ],
     components: {

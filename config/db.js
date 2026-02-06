@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
-// mongodb+srv://medi_admin_dev:<db_password>@dev-medibd.xdq9x.mongodb.net/?appName=dev-medibd
-mongoose.connect('mongodb://127.0.0.1:27017/salon')
+
+await mongoose.connect(process.env.AZURE_COSMOS_CONNECTIONSTRING)
     .then(() => console.log('Database connection successful'))
     .catch((err) => console.log('Connection Failed: ', err))
 

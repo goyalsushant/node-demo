@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import authRoutes from './routes/auth.route.js'
 import bookingRoutes from './routes/booking.route.js'
 import serviceRoutes from './routes/service.route.js'
+import uploadRouter from './routes/upload.route.js'
 import mongoose from './config/db.js'
 
 import swaggerUI from 'swagger-ui-express'
@@ -19,7 +20,7 @@ app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec))
 app.use('/auth', authRoutes)
 app.use('/booking', bookingRoutes)
 app.use('/service', serviceRoutes)
-
+app.use("/", uploadRouter);
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is running on port: ${process.env.PORT}`)
